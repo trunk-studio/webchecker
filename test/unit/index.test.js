@@ -2,7 +2,8 @@ import { assert } from 'chai';
 import WebChecker from '../../src'
 describe('description', function() {
   // let url = process.argv[11];
-  let url = "http://trunk-studio.com/";
+  let url = process.env.checkurl;
+  
   let webChecker = null;
   before((done) => {
     webChecker = new WebChecker({url});

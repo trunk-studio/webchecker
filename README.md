@@ -25,7 +25,7 @@ And include in your project:
 import webchecker from 'webchecker';
 ```
 
-npm run test http://trunk-studio.com/
+checkurl="http://trunk-studio.com/" npm run test
 
 ## License
 
