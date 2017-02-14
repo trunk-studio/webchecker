@@ -25,6 +25,8 @@ And include in your project:
 import webchecker from 'webchecker';
 ```
 
+npm run test http://trunk-studio.com/
+
 ## License
 
 MIT

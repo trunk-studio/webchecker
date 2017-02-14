@@ -10,15 +10,31 @@
     "compile": "babel src --out-dir lib",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run compile",
-    "test": "babel-node ./node_modules/.bin/isparta cover _mocha"
+    "test": "./node_modules/.bin/mocha",
+    "webcheck": "npm run compile && node lib/app.js"
   },
   "devDependencies": {
     "babel-cli": "*",
-    "babel-preset-es2015-node4": "*",
-    "coveralls": "*",
+    "babel-core": "^6.8.0",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-syntax-async-functions": "^6.8.0",
+    "babel-plugin-transform-regenerator": "^6.1.4",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-es2015": "*",
     "chai": "*",
+    "coveralls": "*",
+    "eslint": "^2.11.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
     "isparta": "*",
-    "mocha": "*",
-    "sinon": "*"
+    "mocha": "^2",
+    "sinon": "*",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.1.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.6.1"
   }
 }
