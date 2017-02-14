@@ -3,11 +3,16 @@ import WebChecker from '../../src'
 describe('description', function() {
   // let url = process.argv[11];
   let url = process.env.checkurl;
-  
+
   let webChecker = null;
   before((done) => {
-    webChecker = new WebChecker({url});
-    done();
+    try {
+      webChecker = new WebChecker({url});
+      done();
+    } catch (e) {
+      done(e);
+    }
+
   })
 
   describe(`check ${url} website info`, function() {
