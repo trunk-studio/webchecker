@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import WebChecker from '../../src'
-describe('description', function() {
+describe('check website', function() {
   // let url = process.argv[11];
   let url = process.env.checkurl;
 
@@ -15,18 +15,25 @@ describe('description', function() {
 
   })
 
-  describe(`check ${url} website info`, function() {
+  describe(`target: ${url},`, function() {
+    let header = {};
     before(async function (done) {
       await webChecker.checkSecure();
+      header = webChecker.getCheckResult();
       done();
     })
 
-    it('should Preventing Information Disclosure ', function(done) {
-      let result = webChecker.getCheckResult();
-      let {server} = result
+    it('should Server header without display nginx version.', function(done) {
+      let {server} = header
       server.split("/").length.should.be.eq(1)
       done();
 
+    });
+
+    it('should Server header without display x-powered-by', function(done) {
+      let powered = header["x-powered-by"]
+      powered.should.be.eq(null)
+      done();
     });
 
   });

@@ -10,7 +10,6 @@ export default class WebChecker {
   }
 
   async checkSecure() {
-    console.log("=== checkSecure ===", this.url);
     let res = await request(this.url).get("/");
     this.result = res.header;
   }
