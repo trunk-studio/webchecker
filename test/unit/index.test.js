@@ -25,23 +25,17 @@ describe('check website', function() {
 
     it('should Server header without display nginx version.', function(done) {
       let {server} = header
-      if (server===undefined) {
-        done();
-      } else {
-        server.split("/").length.should.be.eq(1)
-        done();
-      }
+      if (server===undefined) return done();
+      server.split("/").length.should.be.eq(1);
+      done();
 
     });
 
     it('should Server header without display x-powered-by', function(done) {
       let powered = header["x-powered-by"]
-      if (powered===undefined) {
-        done();
-      } else {
-        powered.should.be.eq(null)
-        done();
-      }
+      if (powered===undefined) return done();
+      powered.should.be.eq(null);
+      done();
     });
 
   });
