@@ -25,14 +25,16 @@ describe('check website', function() {
 
     it('should Server header without display nginx version.', function(done) {
       let {server} = header
-      server.split("/").length.should.be.eq(1)
+      if (server===undefined) return done();
+      server.split("/").length.should.be.eq(1);
       done();
 
     });
 
     it('should Server header without display x-powered-by', function(done) {
       let powered = header["x-powered-by"]
-      powered.should.be.eq(null)
+      if (powered===undefined) return done();
+      powered.should.be.eq(null);
       done();
     });
 
