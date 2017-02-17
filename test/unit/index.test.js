@@ -32,8 +32,12 @@ describe('check website', function() {
 
     it('should Server header without display x-powered-by', function(done) {
       let powered = header["x-powered-by"]
-      powered.should.be.eq(null)
-      done();
+      if (powered===undefined) {
+        done();
+      } else {
+        powered.should.be.eq(null)
+        done();
+      }
     });
 
   });
