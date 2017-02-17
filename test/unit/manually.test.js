@@ -8,7 +8,7 @@ describe('genernator report for human read', function() {
   let domain = url.split("://")[1].split("/")[0];
   let reportFolder = "report-" + domain.replace(".","-");
 
-  describe(`target: ${url},`, function() {
+  describe(`report here: ${reportFolder}/`, function() {
     let header = {};
     before(async function (done) {
       try {
