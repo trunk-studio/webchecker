@@ -11,7 +11,8 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run compile",
     "test": "./node_modules/.bin/mocha",
-    "webcheck": "npm run compile && node lib/app.js"
+    "webcheck": "npm run compile && node lib/app.js",
+    "clean-report": "rm -rf report-*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -35,6 +36,8 @@
     "supertest-as-promised": "^3.1.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.6.1"
+    "babel-runtime": "^6.6.1",
+    "cheerio": "^0.22.0",
+    "simplecrawler": "^1.0.4"
   }
 }

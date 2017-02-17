@@ -36,3 +36,6 @@ lib
 nbproject
 .idea
 .node_history
+
+# Reports
+report-*
