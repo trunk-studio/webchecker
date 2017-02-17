@@ -25,8 +25,12 @@ describe('check website', function() {
 
     it('should Server header without display nginx version.', function(done) {
       let {server} = header
-      server.split("/").length.should.be.eq(1)
-      done();
+      if (server===undefined) {
+        done();
+      } else {
+        server.split("/").length.should.be.eq(1)
+        done();
+      }
 
     });
 
